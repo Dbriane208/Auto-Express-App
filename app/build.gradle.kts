@@ -1,6 +1,11 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id ("kotlin-parcelize")
+    id ("androidx.navigation.safeargs.kotlin")
+    id ("dagger.hilt.android.plugin")
+    id ("kotlin-kapt")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -33,6 +38,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures{
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -45,4 +53,36 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //loading button
+    implementation("br.com.simplepass:loading-button-android:2.2.0")
+
+    //Glide
+    implementation("com.github.bumptech.glide:glide:4.13.0")
+
+    //circular image
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+
+    //viewpager2 indicator
+    implementation("io.github.vejei.viewpagerindicator:viewpagerindicator:1.0.0-alpha.1")
+
+    //stepView
+    implementation ("com.shuhart.stepview:stepview:1.5.1")
+
+    //Android Ktx
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.7.7")
+
+    //Dagger hilt
+    implementation ("com.google.dagger:hilt-android:2.49")
+    kapt("com.google.dagger:hilt-compiler:2.48")
+
+    //Firebase
+    implementation ("com.google.firebase:firebase-auth:22.3.1")
+
+    //Navigation
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.7.7")
+
+    // coroutine with firebase
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
 }

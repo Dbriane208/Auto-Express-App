@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "819115175026",
+    "project_id": "auto-express-77b57",
+    "storage_bucket": "auto-express-77b57.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819115175026:android:2310fd959c16bd22f6e6eb",
+        "android_client_info": {
+          "package_name": "daniel.brian.autoexpress"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDU_yPXfC5qgxIy3Wq-Ts5eMSInmflvkMk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

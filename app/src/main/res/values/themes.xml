@@ -3,6 +3,13 @@
     <style name="Base.Theme.AutoExpress" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/g_white</item>
+        <item name="android:colorBackground">@color/light_colorBackground</item>
+        <item name="colorError">@color/light_colorError</item>
+        <item name="colorSurface">@color/light_colorSurface</item>
+        <item name="colorSecondary">@color/light_colorSecondary</item>
+        <item name="colorTertiary">@color/light_colorTertiary</item>
+        <item name="colorPrimaryVariant">@color/g_white</item>
     </style>
 
     <style name="Theme.AutoExpress" parent="Base.Theme.AutoExpress" />
