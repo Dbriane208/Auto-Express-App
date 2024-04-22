@@ -3,8 +3,9 @@
 
     <color name="g_white">#FFFEFF</color>
     <color name="g_blue">#1A2D5D</color>
-    <color name="g_black">#141416</color>
+    <color name="g_black">#5B5B5D</color>
     <color name="g_orange">#F37B55</color>
+    <color name="blue">#1877F2</color>
 
     <color name="dark_colorBackground">#1C1E21</color>
     <color name="dark_colorPrimary">#1877F2</color>

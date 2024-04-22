@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Auto Express</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="signup">Sign Up</string>
+    <string name="username">username</string>
+    <string name="required">*Required</string>
+    <string name="email">Email</string>
+    <string name="password">password</string>
+    <string name="cont">Continue</string>
+    <string name="login_with_google">Login With Google</string>
+    <string name="signup_with_google">Sign up With Google</string>
+    <string name="or">or</string>
+    <string name="txtLogin">Already have an account?</string>
+    <string name="toLogin">Sign in</string>
+    <string name="login">Login</string>
+    <string name="txtSignup">Don\'t have an account yet?</string>
+    <string name="toSignup">Sign up</string>
+    <string name="txtForgotPass">Forgot your password?</string>
+    <string name="forgotPass">Reset Password</string>
+    <string name="confirm_password">Confirm new password</string>
+    <string name="new_password">New password</string>
+    <string name="reset">Known your password?</string>
+    <string name="txtReset">Enter a new password to reset the password on \n your account. We\'ll ask this password whenever \n you login.</string>
 </resources>

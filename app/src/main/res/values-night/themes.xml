@@ -3,10 +3,10 @@
     <style name="Base.Theme.AutoExpress" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
-        <item name="colorPrimary">@color/g_white</item>
+        <item name="colorPrimary">@color/g_black</item>
         <item name="android:colorBackground">@color/dark_colorBackground</item>
         <item name="colorError">@color/dark_colorError</item>
         <item name="colorSurface">@color/dark_colorSurface</item>
-        <item name="colorPrimaryVariant">@color/g_white</item>
+        <item name="colorPrimaryVariant">@color/g_black</item>
     </style>
 </resources>
