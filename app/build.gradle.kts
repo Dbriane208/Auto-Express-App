@@ -50,6 +50,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -74,10 +75,10 @@ dependencies {
 
     //Dagger hilt
     implementation ("com.google.dagger:hilt-android:2.49")
-    kapt("com.google.dagger:hilt-compiler:2.48")
+    kapt("com.google.dagger:hilt-compiler:2.49")
 
     //Firebase
-    implementation ("com.google.firebase:firebase-auth:22.3.1")
+    implementation (libs.firebase.auth)
 
     //Navigation
     implementation ("androidx.navigation:navigation-fragment-ktx:2.7.7")

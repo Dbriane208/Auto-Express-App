@@ -7,7 +7,7 @@
     <string name="required">*Required</string>
     <string name="email">Email</string>
     <string name="password">password</string>
-    <string name="cont">Continue</string>
+    <string name="cont">Login</string>
     <string name="login_with_google">Login With Google</string>
     <string name="signup_with_google">Sign up With Google</string>
     <string name="or">or</string>
@@ -22,4 +22,9 @@
     <string name="new_password">New password</string>
     <string name="reset">Known your password?</string>
     <string name="txtReset">Enter a new password to reset the password on \n your account. We\'ll ask this password whenever \n you login.</string>
+    <string name="register">Register</string>
+    <string name="home">Home</string>
+    <string name="schedule">Schedule</string>
+    <string name="cart">Cart</string>
+    <string name="profile">Profile</string>
 </resources>
