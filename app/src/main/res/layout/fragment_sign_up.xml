@@ -120,11 +120,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
-        android:id="@+id/btnContinue"
+        android:id="@+id/btnRegister"
         style="@style/blueButtonStyle"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:text="@string/cont"
+        android:text="@string/register"
         app:layout_constraintBottom_toTopOf="@id/guidelineBottomContinue"
         app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
         app:layout_constraintStart_toStartOf="@id/guidelineStart"
