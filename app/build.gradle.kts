@@ -1,3 +1,4 @@
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -20,6 +21,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -86,4 +88,10 @@ dependencies {
 
     // coroutine with firebase
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
+    
+    // signing in with google
+    implementation(platform("com.google.firebase:firebase-bom:32.8.1"))
+    //noinspection UseTomlInstead
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.android.gms:play-services-auth:21.1.0")
 }
