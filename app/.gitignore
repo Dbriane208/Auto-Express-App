@@ -1,1 +1,6 @@
 /build
+*.iml
+.idea/
+/utils/Constants.kt
+/local.properties
+.gradle
