@@ -12,12 +12,15 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import daniel.brian.autoexpress.R
 import daniel.brian.autoexpress.activities.ShoppingActivity
 import daniel.brian.autoexpress.databinding.FragmentLoginBinding
+import daniel.brian.autoexpress.utils.Constants.RC_SIGN_IN
 import daniel.brian.autoexpress.utils.Resource
 import daniel.brian.autoexpress.viewmodel.LoginViewModel
+
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
@@ -36,7 +39,7 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // navigate to signup fragment
-        binding.toSignup.setOnClickListener{
+        binding.toSignup.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
         }
 
@@ -44,6 +47,7 @@ class LoginFragment : Fragment() {
         binding.forgotPassword.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
         }
+
 
         binding.apply {
             btnLogin.setOnClickListener {
@@ -54,18 +58,21 @@ class LoginFragment : Fragment() {
         }
 
         lifecycleScope.launchWhenStarted {
-            viewModel.login.collect{
-                when(it){
+            viewModel.login.collect {
+                when (it) {
                     is Resource.Error -> {
-                        Toast.makeText(requireContext(),it.message.toString(),Toast.LENGTH_LONG).show()
+                        Toast.makeText(requireContext(), it.message.toString(), Toast.LENGTH_LONG)
+                            .show()
                         binding.btnLogin.revertAnimation()
                     }
-                    is Resource.Loading ->{
+
+                    is Resource.Loading -> {
                         binding.btnLogin.startAnimation()
                     }
+
                     is Resource.Success -> {
                         binding.btnLogin.revertAnimation()
-                        Intent(requireActivity(),ShoppingActivity::class.java).also { intent ->
+                        Intent(requireActivity(), ShoppingActivity::class.java).also { intent ->
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                             startActivity(intent)
                         }
@@ -75,6 +82,31 @@ class LoginFragment : Fragment() {
                 }
             }
         }
-    }
 
+        binding.btnLoginWithGoogle.setOnClickListener {
+            viewModel.loginWithGoogle(this)
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.googleLogin.collect {
+                when (it) {
+                    is Resource.Error -> {
+                        Snackbar.make(requireView(), it.message.toString(), Snackbar.LENGTH_LONG)
+                    }
+                    is Resource.Loading -> {
+                        Snackbar.make(requireView(), "Loading", Snackbar.LENGTH_LONG)
+                    }
+                    is Resource.Success ->{
+                        Snackbar.make(requireView(),"Login Successful", Snackbar.LENGTH_LONG).show()
+                        Intent(requireActivity(),ShoppingActivity::class.java).also {
+                            intent ->
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                            startActivity(intent)
+                        }
+                    }
+                    else -> Unit
+                }
+            }
+        }
+    }
 }

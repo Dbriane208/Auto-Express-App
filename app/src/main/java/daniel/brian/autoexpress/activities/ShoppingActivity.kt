@@ -2,6 +2,9 @@ package daniel.brian.autoexpress.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
+import daniel.brian.autoexpress.R
 import daniel.brian.autoexpress.databinding.ActivityShoppingBinding
 
 class ShoppingActivity : AppCompatActivity() {
@@ -10,5 +13,9 @@ class ShoppingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityShoppingBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val navController = findNavController(R.id.shoppingHostFragment)
+        binding.bottomNavigation.setupWithNavController(navController)
+
     }
 }
