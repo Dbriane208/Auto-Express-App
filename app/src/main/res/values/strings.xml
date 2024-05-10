@@ -27,4 +27,16 @@
     <string name="schedule">Schedule</string>
     <string name="cart">Cart</string>
     <string name="profile">Profile</string>
+    <string name="hello">Hello there</string>
+    <string name="name">username</string>
+    <string name="deals">Best Deals</string>
+    <string name="popular">Popular Products</string>
+    <string name="accessories">Accessories</string>
+    <string name="services">Services</string>
+    <string name="batteries">Batteries</string>
+    <string name="brakes">Brakes</string>
+    <string name="suspension">Suspension</string>
+    <string name="wipers">Wipers</string>
+    <string name="oil">Oil Services</string>
+    <string name="tyres">Tyres</string>
 </resources>

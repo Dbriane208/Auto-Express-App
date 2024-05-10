@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.categories.SuspensionAndWipersFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollViewMainCategory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtSuspension"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/suspension"
+                android:fontFamily="@font/poppins_thin"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+                app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+                app:layout_constraintTop_toTopOf="@id/guidelineMrgTop"
+                app:layout_constraintBottom_toTopOf="@id/guidelineBottomBestDealText"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/suspensionRv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+                app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+                app:layout_constraintTop_toBottomOf="@id/guidelineBottomBestDealText"
+                app:layout_constraintBottom_toBottomOf="@id/guidelineTopPopularTextDeal"/>
+
+            <ProgressBar
+                android:id="@+id/suspensionProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:indeterminateTint="@color/blue"
+                app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+                app:layout_constraintTop_toBottomOf="@id/guidelineBottomBestDealText"
+                app:layout_constraintBottom_toTopOf="@id/guidelineTopPopularTextDeal"/>
+
+            <TextView
+                android:id="@+id/txtWipers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wipers"
+                android:fontFamily="@font/poppins_thin"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+                app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+                app:layout_constraintTop_toTopOf="@id/guidelineTopPopularTextDeal"
+                app:layout_constraintBottom_toTopOf="@id/guidelineBottomPopularTextDeal" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/wipersRv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+                app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+                app:layout_constraintTop_toBottomOf="@id/guidelineBottomPopularTextDeal"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <ProgressBar
+                android:id="@+id/wipersProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:indeterminateTint="@color/blue"
+                app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+                app:layout_constraintTop_toBottomOf="@id/guidelineBottomPopularTextDeal"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineMrgStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineMrgEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineMrgTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.02" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineBottomBestDealText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.09" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineTopPopularTextDeal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.51" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineBottomPopularTextDeal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.58" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

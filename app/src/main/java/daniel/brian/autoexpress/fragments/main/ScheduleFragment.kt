@@ -1,4 +1,4 @@
-package daniel.brian.autoexpress.fragments
+package daniel.brian.autoexpress.fragments.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
