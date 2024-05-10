@@ -1,4 +1,4 @@
-package daniel.brian.autoexpress.fragments
+package daniel.brian.autoexpress.fragments.login
 
 import android.app.Activity.RESULT_CANCELED
 import android.app.Activity.RESULT_OK
@@ -21,6 +21,7 @@ import daniel.brian.autoexpress.databinding.FragmentSignUpBinding
 import daniel.brian.autoexpress.utils.Constants.RC_SIGN_IN
 import daniel.brian.autoexpress.utils.RegisterValidation
 import daniel.brian.autoexpress.utils.Resource
+import daniel.brian.autoexpress.viewmodel.IntroductionViewModel
 import daniel.brian.autoexpress.viewmodel.SignUpViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -49,6 +50,7 @@ class SignUpFragment : Fragment() {
         }
 
         binding.btnSignIn.setOnClickListener {
+            // introViewModel.startButtonClick()
             viewModel.signIn(this)
         }
 
@@ -76,6 +78,7 @@ class SignUpFragment : Fragment() {
 
         binding.apply {
             btnRegister.setOnClickListener {
+                //introViewModel.startButtonClick()
                 val user = User(
                     username.text.toString().trim(),
                     email.text.toString().trim()

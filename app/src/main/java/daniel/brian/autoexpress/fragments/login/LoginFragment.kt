@@ -1,6 +1,6 @@
 @file:Suppress("DEPRECATION")
 
-package daniel.brian.autoexpress.fragments
+package daniel.brian.autoexpress.fragments.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -17,7 +17,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import daniel.brian.autoexpress.R
 import daniel.brian.autoexpress.activities.ShoppingActivity
 import daniel.brian.autoexpress.databinding.FragmentLoginBinding
-import daniel.brian.autoexpress.utils.Constants.RC_SIGN_IN
 import daniel.brian.autoexpress.utils.Resource
 import daniel.brian.autoexpress.viewmodel.LoginViewModel
 

@@ -8,10 +8,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.firestore.BuildConfig
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.lifecycle.HiltViewModel
-import daniel.brian.autoexpress.fragments.LoginFragment
+import daniel.brian.autoexpress.fragments.login.LoginFragment
 import daniel.brian.autoexpress.utils.Constants.USER_COLLECTION
 import daniel.brian.autoexpress.utils.Resource
 import kotlinx.coroutines.flow.MutableSharedFlow
