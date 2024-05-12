@@ -38,4 +38,5 @@ object AppModule {
     fun provideIntroductionSP(
         application: Application
     ): SharedPreferences = application.getSharedPreferences(INTRODUCTION_SP, MODE_PRIVATE)
+
 }
