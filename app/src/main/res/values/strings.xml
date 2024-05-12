@@ -39,4 +39,10 @@
     <string name="wipers">Wipers</string>
     <string name="oil">Oil Services</string>
     <string name="tyres">Tyres</string>
+    <string name="price">5000</string>
+    <string name="scotch_premium">Scotch Premium</string>
+    <string name="battery">Battery</string>
+    <string name="brand">Brand Name</string>
+    <string name="description">Description</string>
+    <string name="item">Product Name</string>
 </resources>
