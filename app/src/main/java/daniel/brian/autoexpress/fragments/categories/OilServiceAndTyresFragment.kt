@@ -90,7 +90,7 @@ class OilServiceAndTyresFragment: Fragment() {
     private fun setUpOilServiceRV() {
         oilAdapter = OilAdapter()
         binding.oilServicesRv.apply {
-            layoutManager = GridLayoutManager(requireContext(),3,LinearLayoutManager.HORIZONTAL,false)
+            layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
             adapter = oilAdapter
         }
     }
@@ -98,7 +98,7 @@ class OilServiceAndTyresFragment: Fragment() {
     private fun setUpTyresRV() {
          tyresAdapter = TyresAdapter()
         binding.tyresRv.apply {
-            layoutManager = GridLayoutManager(requireContext(),3,LinearLayoutManager.HORIZONTAL,false)
+            layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
             adapter = tyresAdapter
         }
     }

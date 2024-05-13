@@ -93,7 +93,7 @@ class MainCategoryFragment: Fragment() {
     private fun setUpBestDealsRV() {
         bestDealAdapter = BestDealAdapter()
         binding.bestDeals.apply {
-            layoutManager = GridLayoutManager(requireContext(),3,LinearLayoutManager.HORIZONTAL,false)
+            layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
             adapter = bestDealAdapter
         }
     }
@@ -101,7 +101,7 @@ class MainCategoryFragment: Fragment() {
     private fun setUpPopularProductsRV() {
         popularProductAdapter = PopularProductAdapter()
         binding.popularDeals.apply {
-            layoutManager = GridLayoutManager(requireContext(),3,LinearLayoutManager.HORIZONTAL,false)
+            layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
             adapter = popularProductAdapter
         }
     }

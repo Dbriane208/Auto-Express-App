@@ -15,16 +15,16 @@ class WiperBladesAdapter: RecyclerView.Adapter<WiperBladesAdapter.WiperBladesVie
     inner class WiperBladesViewHolder(private val binding: ProductRvBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product) {
             binding.apply {
-                itemBrandName.text = product.brandName
+                itemBrandName.text = product.brand
                 Glide.with(itemView).load(product.images[0]).into(itemProductImage)
-                productName.text = product.productName
+                productName.text = product.name
                 itemDescription.text = product.description
-                ("Ksh" + product.price.toString()).also { itemOldPrice.text = it }
+                ("Ksh " + product.price.toString()).also { itemOldPrice.text = it }
                 itemOldPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
                 if (product.offerPercentage != null){
-                    ("Ksh" + (product.price - (product.price * product.offerPercentage)).toString()).also { itemNewPrice.text = it }
+                    ("Ksh " + (product.price - (product.price * product.offerPercentage)).toString()).also { itemNewPrice.text = it }
                 }else{
-                    ("Ksh" + product.price.toString()).also { itemNewPrice.text = it }
+                    ("Ksh " + product.price.toString()).also { itemNewPrice.text = it }
                 }
             }
 

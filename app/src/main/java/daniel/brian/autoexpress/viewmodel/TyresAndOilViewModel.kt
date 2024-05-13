@@ -34,7 +34,7 @@ class TyresAndOilViewModel(
                 _tyres.emit(Resource.Loading())
             }
 
-            firestore.collection("products").whereEqualTo("category",category.category)
+            firestore.collection("products").whereEqualTo("category","Tyres")
                 .limit(pagingInfo.newItemsPage * 10).get()
                 .addOnSuccessListener { result->
                     val tyres = result.toObjects(Product::class.java)
@@ -58,7 +58,7 @@ class TyresAndOilViewModel(
                 _oil.emit(Resource.Loading())
             }
 
-            firestore.collection("products").whereEqualTo("category",category.category)
+            firestore.collection("products").whereEqualTo("category","Oils")
                 .limit(pagingInfo.newItemsPage * 10).get()
                 .addOnSuccessListener { result->
                     val oil = result.toObjects(Product::class.java)

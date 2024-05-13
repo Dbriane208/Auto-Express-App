@@ -91,7 +91,7 @@ class AccessoriesAndServicesFragment : Fragment(){
     private fun setUpAccessoriesRV() {
         accessoriesAdapter = AccessoriesAdapter()
         binding.accessoriesRv.apply {
-            layoutManager = GridLayoutManager(requireContext(),3,LinearLayoutManager.HORIZONTAL,false)
+            layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
             adapter = accessoriesAdapter
         }
     }
@@ -99,7 +99,7 @@ class AccessoriesAndServicesFragment : Fragment(){
     private fun setUpServicesRV() {
         servicesAdapter = ServicesAdapter()
         binding.servicesRv.apply {
-            layoutManager = GridLayoutManager(requireContext(),3,LinearLayoutManager.HORIZONTAL,false)
+            layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
             adapter = servicesAdapter
         }
     }

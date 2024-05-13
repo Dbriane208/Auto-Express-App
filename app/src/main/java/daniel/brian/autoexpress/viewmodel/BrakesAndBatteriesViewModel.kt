@@ -34,7 +34,7 @@ class BrakesAndBatteriesViewModel(
                 _brakes.emit(Resource.Loading())
             }
 
-            firestore.collection("products").whereEqualTo("category",category.category)
+            firestore.collection("products").whereEqualTo("category","Brakes")
                 .limit(pagingInfo.newItemsPage * 10).get()
                 .addOnSuccessListener { result->
                     val brakes = result.toObjects(Product::class.java)
@@ -58,7 +58,7 @@ class BrakesAndBatteriesViewModel(
             viewModelScope.launch {
                 _batteries.emit(Resource.Loading())
             }
-             firestore.collection("products").whereEqualTo("category",category.category)
+             firestore.collection("products").whereEqualTo("category","Batteries")
                  .limit(pagingInfo.newItemsPage * 10).get()
                  .addOnSuccessListener { result->
                      val batteries = result.toObjects(Product::class.java)

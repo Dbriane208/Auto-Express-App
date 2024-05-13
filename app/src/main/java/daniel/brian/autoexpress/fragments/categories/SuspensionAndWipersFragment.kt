@@ -91,7 +91,7 @@ class SuspensionAndWipersFragment: Fragment() {
     private fun setUpSuspensionsRV() {
         suspensionAdapter = SuspensionAdapter()
         binding.suspensionRv.apply {
-            layoutManager = GridLayoutManager(requireContext(),3,LinearLayoutManager.HORIZONTAL,false)
+            layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
             adapter = suspensionAdapter
         }
     }
@@ -99,7 +99,7 @@ class SuspensionAndWipersFragment: Fragment() {
     private fun setUpBladeWipersRV() {
         wiperBladesAdapter = WiperBladesAdapter()
         binding.wipersRv.apply {
-            layoutManager = GridLayoutManager(requireContext(),3,LinearLayoutManager.HORIZONTAL,false)
+            layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
             adapter = wiperBladesAdapter
         }
     }
