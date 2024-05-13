@@ -91,7 +91,7 @@ class BatteriesAndBrakesFragment: Fragment() {
     private fun setUpBatteriesRV() {
         batteriesAdapter = BatteriesAdapter()
         binding.batteriesRv.apply {
-            layoutManager = GridLayoutManager(requireContext(),3,LinearLayoutManager.HORIZONTAL,false)
+            layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
             adapter = batteriesAdapter
         }
     }
@@ -99,7 +99,7 @@ class BatteriesAndBrakesFragment: Fragment() {
     private fun setUpBrakesRV() {
         brakesAdapter = BrakesAdapter()
         binding.brakesRv.apply {
-            layoutManager = GridLayoutManager(requireContext(),3,LinearLayoutManager.HORIZONTAL,false)
+            layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
             adapter = brakesAdapter
         }
     }

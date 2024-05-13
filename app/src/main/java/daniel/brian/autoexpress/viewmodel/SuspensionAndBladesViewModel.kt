@@ -34,7 +34,7 @@ class SuspensionAndBladesViewModel (
                 _suspensions.emit(Resource.Loading())
             }
 
-            firestore.collection("products").whereEqualTo("category",category.category)
+            firestore.collection("products").whereEqualTo("category","Suspensions")
                 .limit(pagingInfo.newItemsPage * 10).get()
                 .addOnSuccessListener { result ->
                     val suspensions = result.toObjects(Product::class.java)
@@ -58,7 +58,7 @@ class SuspensionAndBladesViewModel (
                 _suspensions.emit(Resource.Loading())
             }
 
-            firestore.collection("products").whereEqualTo("category",category.category)
+            firestore.collection("products").whereEqualTo("category","Wipers")
                 .limit(pagingInfo.newItemsPage * 10).get()
                 .addOnSuccessListener { result->
                     val wipers = result.toObjects(Product::class.java)

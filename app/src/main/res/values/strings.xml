@@ -45,4 +45,5 @@
     <string name="brand">Brand Name</string>
     <string name="description">Description</string>
     <string name="item">Product Name</string>
+    <string name="add_to_cart">Add to Cart</string>
 </resources>

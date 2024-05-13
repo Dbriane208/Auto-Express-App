@@ -15,15 +15,15 @@ class PopularProductAdapter : RecyclerView.Adapter<PopularProductAdapter.Popular
     inner class PopularViewHolder(private val binding:PopularProductRvBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product) {
             binding.apply {
-                itemBName.text = product.brandName
+                itemBName.text = product.brand
                 Glide.with(itemView).load(product.images[0]).into(itemProductImage)
-                productName.text = product.productName
-                ("Ksh" + product.price.toString()).also { itemOldPrice.text = it }
+                productName.text = product.name
+                ("Ksh " + product.price.toString()).also { itemOldPrice.text = it }
                 itemOldPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
                 if (product.offerPercentage != null){
-                    ("Ksh" + (product.price - (product.price * product.offerPercentage)).toString()).also { itemNewPrice.text = it }
+                    ("Ksh " + (product.price - (product.price * product.offerPercentage)).toString()).also { itemNewPrice.text = it }
                 }else{
-                    ("Ksh" + product.price.toString()).also { itemNewPrice.text = it }
+                    ("Ksh " + product.price.toString()).also { itemNewPrice.text = it }
                 }
             }
         }

@@ -34,7 +34,7 @@ class AccessoriesAndServicesViewModel(
                 _services.emit(Resource.Loading())
             }
 
-            firestore.collection("products").whereEqualTo("category",category.category)
+            firestore.collection("products").whereEqualTo("category","Services")
                 .limit(pagingInfo.newItemsPage * 10).get()
                 .addOnSuccessListener {result->
                     val services = result.toObjects(Product::class.java)
@@ -58,7 +58,7 @@ class AccessoriesAndServicesViewModel(
                 _accessories.emit(Resource.Loading())
             }
 
-            firestore.collection("products").whereEqualTo("category",category.category)
+            firestore.collection("products").whereEqualTo("category","Accessories")
                 .limit(pagingInfo.newItemsPage * 10).get()
                 .addOnSuccessListener { result->
                     val accessories = result.toObjects(Product::class.java)
