@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/appointment_nav"
+    app:startDestination="@id/brakesFragment">
+
+    <fragment
+        android:id="@+id/brakesFragment"
+        android:name="daniel.brian.autoexpress.fragments.appointment.BrakesFragment"
+        android:label="fragment_brakes"
+        tools:layout="@layout/fragment_brakes" />
+    <fragment
+        android:id="@+id/oilFragment"
+        android:name="daniel.brian.autoexpress.fragments.appointment.OilFragment"
+        android:label="fragment_oil"
+        tools:layout="@layout/fragment_oil" />
+    <fragment
+        android:id="@+id/tyresFragment"
+        android:name="daniel.brian.autoexpress.fragments.appointment.TyresFragment"
+        android:label="fragment_tyres"
+        tools:layout="@layout/fragment_tyres" />
+    <fragment
+        android:id="@+id/othersFragment"
+        android:name="daniel.brian.autoexpress.fragments.appointment.OthersFragment"
+        android:label="fragment_others"
+        tools:layout="@layout/fragment_others" />
+    <fragment
+        android:id="@+id/batteryFragment"
+        android:name="daniel.brian.autoexpress.fragments.appointment.BatteryFragment"
+        android:label="fragment_battery"
+        tools:layout="@layout/fragment_battery" />
+    <fragment
+        android:id="@+id/suspensionFragment"
+        android:name="daniel.brian.autoexpress.fragments.appointment.SuspensionFragment"
+        android:label="fragment_suspension"
+        tools:layout="@layout/fragment_suspension" />
+    <fragment
+        android:id="@+id/scheduleFragment2"
+        android:name="daniel.brian.autoexpress.fragments.main.ScheduleFragment"
+        android:label="fragment_schedule"
+        tools:layout="@layout/fragment_schedule" >
+        <action
+            android:id="@+id/action_scheduleFragment2_to_suspensionFragment2"
+            app:destination="@id/suspensionFragment" />
+        <action
+            android:id="@+id/action_scheduleFragment2_to_oilFragment2"
+            app:destination="@id/oilFragment" />
+        <action
+            android:id="@+id/action_scheduleFragment2_to_tyresFragment2"
+            app:destination="@id/tyresFragment" />
+        <action
+            android:id="@+id/action_scheduleFragment2_to_othersFragment"
+            app:destination="@id/othersFragment" />
+        <action
+            android:id="@+id/action_scheduleFragment2_to_brakesFragment"
+            app:destination="@id/brakesFragment" />
+        <action
+            android:id="@+id/action_scheduleFragment2_to_batteryFragment"
+            app:destination="@id/batteryFragment" />
+    </fragment>
+</navigation>

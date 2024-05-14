@@ -1,4 +1,4 @@
-package daniel.brian.autoexpress.fragments.main
+package daniel.brian.autoexpress.fragments.categories
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,18 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import daniel.brian.autoexpress.R
-import daniel.brian.autoexpress.databinding.FragmentScheduleBinding
+import daniel.brian.autoexpress.databinding.FragmentProductDetailsBinding
 
 
-class ScheduleFragment : Fragment() {
-    private lateinit var binding: FragmentScheduleBinding
+
+class ProductDetailsFragment : Fragment() {
+    private lateinit var binding: FragmentProductDetailsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View{
         // Inflate the layout for this fragment
-        binding = FragmentScheduleBinding.inflate(layoutInflater)
+        binding = FragmentProductDetailsBinding.inflate(layoutInflater)
         return binding.root
     }
 
