@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.appointment.BatteryFragment">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:title="@string/tyresApp"
+        android:background="@color/g_blue"
+        android:titleTextColor="@color/g_white"
+        android:titleMarginStart="45dp"
+        android:titleTextAppearance="@style/h4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineMrgTop"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTopService"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomService">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/tyreService"
+            android:text="@string/service"/>
+
+        <AutoCompleteTextView
+            android:id="@+id/tyreService"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/service"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            android:label="@string/service"
+            android:inputType="none"
+            tools:ignore="VisualLintTextFieldSize" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomService"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomBranch">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/tyreBranch"
+            android:text="@string/branch"/>
+
+        <AutoCompleteTextView
+            android:id="@+id/tyreBranch"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/branch"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            android:label="@string/branch"
+            android:inputType="none"
+            tools:ignore="VisualLintTextFieldSize" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomBranch"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomName">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/firstNameT"
+            android:text="@string/firstName"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/firstNameT"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/firstName"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            android:label="@string/firstName"
+            tools:ignore="VisualLintTextFieldSize" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomName"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomPhone">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/tyrePhone"
+            android:text="@string/phone"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/tyrePhone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/phone"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            android:label="@string/phone"
+            tools:ignore="VisualLintTextFieldSize" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomPhone"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomEmail">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/tyreTime"
+            android:text="@string/time"/>
+
+        <AutoCompleteTextView
+            android:id="@+id/tyreTime"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/time"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            android:label="@string/time"
+            android:inputType="none"
+            tools:ignore="VisualLintTextFieldSize" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomEmail"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomCMake">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/carMakeTyres"
+            android:text="@string/carMake"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/carMakeTyres"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/carMake"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            android:label="@string/carMake"
+            tools:ignore="VisualLintTextFieldSize" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomCMake"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomCarReg">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/carRegTyres"
+            android:text="@string/carReg"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/carRegTyres"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/carReg"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            android:label="@string/carReg"
+            tools:ignore="VisualLintTextFieldSize" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomCarReg"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomModel">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/carModelTyres"
+            android:text="@string/carModel"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/carModelTyres"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/carModel"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            android:label="@string/carModel"
+            tools:ignore="VisualLintTextFieldSize" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        android:id="@+id/tyresBook"
+        style="@style/blueButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="@string/book"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomModel"
+        app:spinning_bar_color="@color/g_white"
+        tools:ignore="VisualLintButtonSize" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMrgStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMrgEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMrgTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTopService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.24" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomBranch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.42" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.51" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomCMake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.69" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomCarReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.78" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomModel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.87" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -46,4 +46,85 @@
     <string name="description">Description</string>
     <string name="item">Product Name</string>
     <string name="add_to_cart">Add to Cart</string>
+    <string name="admin">Admin Dashboard</string>
+    <string name="tyresS"><![CDATA[Tyres & Tyres Services]]></string>
+    <string name="others"><![CDATA[Products & Services]]></string>
+    <string name="appointment">Book Appointment</string>
+    <string name="service">Service</string>
+    <string name="branch">Branch</string>
+    <string name="firstName">First Name</string>
+    <string name="phone">Phone</string>
+    <string name="carMake">Car Make</string>
+    <string name="carReg">Car Reg</string>
+    <string name="carModel">Car Model</string>
+    <string name="book">Book Appointment</string>
+    <string name="brakesApp">Brakes Appointment</string>
+    <string name="oilApp">Oil Service Appointment</string>
+    <string name="othersApp">Products Appointment</string>
+    <string name="suspensionApp">Suspension Appointment</string>
+    <string name="tyresApp">Tyres Appointment</string>
+    <string name="batteryApp">Battery Appointment</string>
+    <string name="time">Time</string>
+    <string name="text">TextView</string>
+    <string name="_600">Ksh 6000</string>
+    <string name="txtDesc">Description</string>
+    <string name="my_cart">My Cart</string>
+    <string name="check_out">Check out</string>
+    <string name="empty">Your Cart is empty</string>
+    <string name="total">Total</string>
+    <string name="_150">$150</string>
+    <string name="_chair">Battery</string>
+    <string name="_50">Ksh 500</string>
+    <string name="_1">1</string>
+
+    <string-array name="tyreServices">
+        <item>Tyre Fitment - Passenger</item>
+        <item>Tyre Fitment - SUV</item>
+        <item>Tyre Fitment and Balancing</item>
+        <item>Tyre Fitment  and Alignment</item>
+        <item>Balancing only</item>
+        <item>Wheel Alignment - Passenger</item>
+        <item>Wheel Alignment - SUV</item>
+        <item>Tyre Rotation</item>
+        <item>Puncture Repair</item>
+    </string-array>
+
+    <string-array name="oilServices">
+        <item>Oil service - Minor</item>
+        <item>Oil service - Major</item>
+        <item>Spark plugs</item>
+    </string-array>
+
+    <string-array name="brakeServices">
+        <item>Brake pads</item>
+        <item>Brake disks</item>
+    </string-array>
+
+    <string-array name="suspensionServices">
+        <item>Shock Absorbers and Alignment</item>
+        <item>Coil Springs and Alignment</item>
+    </string-array>
+
+    <string-array name="batteryServices">
+        <item>Battery Replacement</item>
+        <item>Battery Check</item>
+    </string-array>
+
+    <string-array name="productServices">
+        <item>3D-point inspection</item>
+        <item>Electronic diagnosis</item>
+        <item>Spark plugs</item>
+        <item>Light Bulbs</item>
+        <item>Wipers</item>
+    </string-array>
+
+    <string-array name="branches">
+        <item>Nyeri Branch</item>
+        <item>Nairobi Branch</item>
+        <item>Kisumu Branch</item>
+        <item>Thika Branch</item>
+        <item>Eldoret Branch</item>
+    </string-array>
+
+
 </resources>
