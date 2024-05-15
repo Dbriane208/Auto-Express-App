@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/appointment_nav"
-    app:startDestination="@id/brakesFragment">
+    app:startDestination="@id/bookAppointmentFragment">
 
     <fragment
         android:id="@+id/brakesFragment"
@@ -36,27 +36,27 @@
         android:label="fragment_suspension"
         tools:layout="@layout/fragment_suspension" />
     <fragment
-        android:id="@+id/scheduleFragment2"
-        android:name="daniel.brian.autoexpress.fragments.main.ScheduleFragment"
-        android:label="fragment_schedule"
-        tools:layout="@layout/fragment_schedule" >
+        android:id="@+id/bookAppointmentFragment"
+        android:name="daniel.brian.autoexpress.fragments.appointment.BookAppointmentFragment"
+        android:label="fragment_book_appointment"
+        tools:layout="@layout/fragment_book_appointment" >
         <action
-            android:id="@+id/action_scheduleFragment2_to_suspensionFragment2"
+            android:id="@+id/action_bookAppointmentFragment_to_suspensionFragment"
             app:destination="@id/suspensionFragment" />
         <action
-            android:id="@+id/action_scheduleFragment2_to_oilFragment2"
+            android:id="@+id/action_bookAppointmentFragment_to_oilFragment"
             app:destination="@id/oilFragment" />
         <action
-            android:id="@+id/action_scheduleFragment2_to_tyresFragment2"
+            android:id="@+id/action_bookAppointmentFragment_to_tyresFragment"
             app:destination="@id/tyresFragment" />
         <action
-            android:id="@+id/action_scheduleFragment2_to_othersFragment"
+            android:id="@+id/action_bookAppointmentFragment_to_othersFragment"
             app:destination="@id/othersFragment" />
         <action
-            android:id="@+id/action_scheduleFragment2_to_brakesFragment"
+            android:id="@+id/action_bookAppointmentFragment_to_brakesFragment"
             app:destination="@id/brakesFragment" />
         <action
-            android:id="@+id/action_scheduleFragment2_to_batteryFragment"
+            android:id="@+id/action_bookAppointmentFragment_to_batteryFragment"
             app:destination="@id/batteryFragment" />
     </fragment>
 </navigation>

@@ -63,4 +63,6 @@ class WiperBladesAdapter: RecyclerView.Adapter<WiperBladesAdapter.WiperBladesVie
     override fun getItemCount(): Int {
         return differ.currentList.size
     }
+
+    var onClick: ((Product) -> Unit) ?= null
 }

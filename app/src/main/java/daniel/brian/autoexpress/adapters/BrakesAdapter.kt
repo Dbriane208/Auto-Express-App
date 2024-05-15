@@ -63,4 +63,6 @@ class BrakesAdapter: RecyclerView.Adapter<BrakesAdapter.BrakesViewHolder>() {
     override fun getItemCount(): Int {
         return differ.currentList.size
     }
+
+    var onClick: ((Product) -> Unit) ?= null
 }

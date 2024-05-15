@@ -64,4 +64,5 @@ class BatteriesAdapter: RecyclerView.Adapter<BatteriesAdapter.BatteriesViewHolde
         return differ.currentList.size
     }
 
+    var onClick: ((Product) -> Unit) ?= null
 }

@@ -7,11 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.AndroidEntryPoint
+import daniel.brian.autoexpress.R
 import daniel.brian.autoexpress.adapters.OilAdapter
 import daniel.brian.autoexpress.adapters.TyresAdapter
 import daniel.brian.autoexpress.data.Category
@@ -47,6 +49,16 @@ class OilServiceAndTyresFragment: Fragment() {
         // preparing the rvs
         setUpOilServiceRV()
         setUpTyresRV()
+
+        oilAdapter.onClick = {
+            val b = Bundle().apply { putParcelable("products",it) }
+            findNavController().navigate(R.id.action_oilServiceAndTyresFragment_to_productDetailsFragment2,b)
+        }
+
+        tyresAdapter.onClick = {
+            val b = Bundle().apply { putParcelable("products",it) }
+            findNavController().navigate(R.id.action_oilServiceAndTyresFragment_to_productDetailsFragment2,b)
+        }
 
         lifecycleScope.launchWhenStarted {
             viewModel.oil.collectLatest {

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import daniel.brian.autoexpress.R
 import daniel.brian.autoexpress.databinding.FragmentScheduleBinding
 

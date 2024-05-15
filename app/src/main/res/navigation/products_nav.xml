@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/products_nav"
+    app:startDestination="@id/accessoriesAndServicesFragment">
+
+    <fragment
+        android:id="@+id/accessoriesAndServicesFragment"
+        android:name="daniel.brian.autoexpress.fragments.categories.AccessoriesAndServicesFragment"
+        android:label="fragment_accessories_services"
+        tools:layout="@layout/fragment_accessories_services" >
+        <action
+            android:id="@+id/action_accessoriesAndServicesFragment_to_productDetailsFragment2"
+            app:destination="@id/productDetailsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/batteriesAndBrakesFragment"
+        android:name="daniel.brian.autoexpress.fragments.categories.BatteriesAndBrakesFragment"
+        android:label="fragment_brake_batteries"
+        tools:layout="@layout/fragment_brake_batteries" >
+        <action
+            android:id="@+id/action_batteriesAndBrakesFragment_to_productDetailsFragment2"
+            app:destination="@id/productDetailsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/oilServiceAndTyresFragment"
+        android:name="daniel.brian.autoexpress.fragments.categories.OilServiceAndTyresFragment"
+        android:label="fragment_tyres_oil_service"
+        tools:layout="@layout/fragment_tyres_oil_service" >
+        <action
+            android:id="@+id/action_oilServiceAndTyresFragment_to_productDetailsFragment2"
+            app:destination="@id/productDetailsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/suspensionAndWipersFragment"
+        android:name="daniel.brian.autoexpress.fragments.categories.SuspensionAndWipersFragment"
+        android:label="fragment_suspension_wiper_blades"
+        tools:layout="@layout/fragment_suspension_wiper_blades" >
+        <action
+            android:id="@+id/action_suspensionAndWipersFragment_to_productDetailsFragment2"
+            app:destination="@id/productDetailsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment2"
+        android:name="daniel.brian.autoexpress.fragments.categories.ProductDetailsFragment"
+        android:label="fragment_product_details"
+        tools:layout="@layout/fragment_product_details" >
+        <argument
+            android:name="products"
+            app:argType="daniel.brian.autoexpress.data.Product" />
+    </fragment>
+</navigation>
