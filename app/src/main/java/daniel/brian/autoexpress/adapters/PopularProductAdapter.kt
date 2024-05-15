@@ -61,4 +61,6 @@ class PopularProductAdapter : RecyclerView.Adapter<PopularProductAdapter.Popular
     override fun getItemCount(): Int {
         return  differ.currentList.size
     }
+
+    var onClick: ((Product) -> Unit) ?= null
 }

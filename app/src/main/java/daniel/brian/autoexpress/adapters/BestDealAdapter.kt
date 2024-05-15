@@ -54,4 +54,6 @@ class BestDealAdapter: RecyclerView.Adapter<BestDealAdapter.BestDealViewHolder>(
     override fun getItemCount(): Int {
         return differ.currentList.size
     }
+
+    var onClick: ((Product) -> Unit) ?= null
 }

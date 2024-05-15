@@ -62,4 +62,6 @@ class ServicesAdapter: RecyclerView.Adapter<ServicesAdapter.ServiceViewHolder>()
     override fun getItemCount(): Int {
         return differ.currentList.size
     }
+
+    var onClick: ((Product) -> Unit) ?= null
 }

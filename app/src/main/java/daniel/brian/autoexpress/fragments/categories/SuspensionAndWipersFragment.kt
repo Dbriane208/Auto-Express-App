@@ -9,11 +9,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.AndroidEntryPoint
+import daniel.brian.autoexpress.R
 import daniel.brian.autoexpress.adapters.SuspensionAdapter
 import daniel.brian.autoexpress.adapters.WiperBladesAdapter
 import daniel.brian.autoexpress.data.Category
@@ -48,6 +50,16 @@ class SuspensionAndWipersFragment: Fragment() {
         //preparing the rvs
         setUpSuspensionsRV()
         setUpBladeWipersRV()
+
+        suspensionAdapter.onClick = {
+            val b = Bundle().apply { putParcelable("products",it) }
+            findNavController().navigate(R.id.action_suspensionAndWipersFragment_to_productDetailsFragment2,b)
+        }
+
+        wiperBladesAdapter.onClick = {
+            val b = Bundle().apply { putParcelable("products",it) }
+            findNavController().navigate(R.id.action_suspensionAndWipersFragment_to_productDetailsFragment2,b)
+        }
 
         lifecycleScope.launchWhenStarted {
             viewModel.suspensions.collectLatest {

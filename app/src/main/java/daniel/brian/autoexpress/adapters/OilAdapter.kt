@@ -61,4 +61,5 @@ class OilAdapter: RecyclerView.Adapter<OilAdapter.OilViewHolder>() {
         return  differ.currentList.size
     }
 
+    var onClick: ((Product) -> Unit) ?= null
 }

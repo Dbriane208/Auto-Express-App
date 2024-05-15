@@ -11,6 +11,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.firestore
 import dagger.Module
 import dagger.Provides
@@ -38,5 +39,12 @@ object AppModule {
     fun provideIntroductionSP(
         application: Application
     ): SharedPreferences = application.getSharedPreferences(INTRODUCTION_SP, MODE_PRIVATE)
+
+//    @Provides
+//    @Singleton
+//    fun provideFirebaseCommon(
+//        auth: FirebaseAuth,
+//        firestore: FirebaseFirestore
+//    ) = FirebaseCommon(auth,firestore)
 
 }

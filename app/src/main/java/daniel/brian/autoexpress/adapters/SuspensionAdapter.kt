@@ -62,4 +62,6 @@ class SuspensionAdapter: RecyclerView.Adapter<SuspensionAdapter.SuspensionViewHo
     override fun getItemCount(): Int {
         return differ.currentList.size
     }
+
+    var onClick: ((Product) -> Unit) ?= null
 }

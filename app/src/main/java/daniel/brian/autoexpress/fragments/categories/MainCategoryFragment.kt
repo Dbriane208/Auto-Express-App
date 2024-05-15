@@ -10,10 +10,12 @@ import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
+import daniel.brian.autoexpress.R
 import daniel.brian.autoexpress.adapters.BestDealAdapter
 import daniel.brian.autoexpress.adapters.PopularProductAdapter
 import daniel.brian.autoexpress.databinding.FragmentMainCategoryBinding
@@ -42,6 +44,17 @@ class MainCategoryFragment: Fragment() {
         //preparing the rvs
         setUpBestDealsRV()
         setUpPopularProductsRV()
+
+        //invoking the onclick listener of the adapters
+        bestDealAdapter.onClick = {
+            val b = Bundle().apply { putParcelable("products",it) }
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
+        }
+
+        popularProductAdapter.onClick = {
+            val b = Bundle().apply { putParcelable("products",it) }
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
+        }
 
         lifecycleScope.launchWhenStarted {
             viewModel.bestDeals.collectLatest {

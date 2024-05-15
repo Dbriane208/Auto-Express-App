@@ -76,6 +76,7 @@
     <string name="_chair">Battery</string>
     <string name="_50">Ksh 500</string>
     <string name="_1">1</string>
+    <string name="date">Date</string>
 
     <string-array name="tyreServices">
         <item>Tyre Fitment - Passenger</item>
@@ -124,6 +125,17 @@
         <item>Kisumu Branch</item>
         <item>Thika Branch</item>
         <item>Eldoret Branch</item>
+    </string-array>
+
+    <string-array name="time">
+        <item>08.00 – 8.30am</item>
+        <item>08.30 – 9.00am</item>
+        <item>09.30 – 10.00am</item>
+        <item>10.30 – 11.00am</item>
+        <item>11.30 – 12.00pm</item>
+        <item>12.30 – 13.00pm</item>
+        <item>13.30 – 14.00pm</item>
+        <item>14.30 – 15.00pm</item>
     </string-array>
 
 

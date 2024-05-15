@@ -62,4 +62,6 @@ class AccessoriesAdapter: RecyclerView.Adapter<AccessoriesAdapter.AccessoriesVie
     override fun getItemCount(): Int {
         return differ.currentList.size
     }
+
+    var onClick: ((Product) -> Unit) ?= null
 }
