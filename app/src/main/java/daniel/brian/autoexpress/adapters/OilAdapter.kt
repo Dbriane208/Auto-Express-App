@@ -55,6 +55,10 @@ class OilAdapter: RecyclerView.Adapter<OilAdapter.OilViewHolder>() {
     override fun onBindViewHolder(holder: OilViewHolder, position: Int) {
         val oil = differ.currentList[position]
         holder.bind(oil)
+
+        holder.itemView.setOnClickListener {
+            onClick?.invoke(oil)
+        }
     }
 
     override fun getItemCount(): Int {

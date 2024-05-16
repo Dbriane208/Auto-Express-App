@@ -62,7 +62,7 @@ class OthersFragment : Fragment() {
                         Snackbar.make(requireView(), it.message.toString(), Snackbar.LENGTH_LONG).show()
                     }
                     is Resource.Loading -> {
-                        binding.othersBook.visibility = View.VISIBLE
+                        binding.othersBook.startAnimation()
                     }
                     is Resource.Success -> {
                         binding.othersBook.visibility = View.GONE

@@ -53,12 +53,12 @@ class SuspensionAndWipersFragment: Fragment() {
 
         suspensionAdapter.onClick = {
             val b = Bundle().apply { putParcelable("products",it) }
-            findNavController().navigate(R.id.action_suspensionAndWipersFragment_to_productDetailsFragment2,b)
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
         }
 
         wiperBladesAdapter.onClick = {
             val b = Bundle().apply { putParcelable("products",it) }
-            findNavController().navigate(R.id.action_suspensionAndWipersFragment_to_productDetailsFragment2,b)
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
         }
 
         lifecycleScope.launchWhenStarted {

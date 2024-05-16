@@ -62,7 +62,7 @@ class TyresFragment : Fragment() {
                         Snackbar.make(requireView(), it.message.toString(), Snackbar.LENGTH_LONG).show()
                     }
                     is Resource.Loading -> {
-                        binding.tyresBook.visibility = View.VISIBLE
+                        binding.tyresBook.startAnimation()
                     }
                     is Resource.Success -> {
                         binding.tyresBook.visibility = View.GONE

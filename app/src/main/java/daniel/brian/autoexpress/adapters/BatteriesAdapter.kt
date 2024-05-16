@@ -58,6 +58,10 @@ class BatteriesAdapter: RecyclerView.Adapter<BatteriesAdapter.BatteriesViewHolde
     override fun onBindViewHolder(holder: BatteriesViewHolder, position: Int) {
         val batteries = differ.currentList[position]
         holder.bind(batteries)
+
+        holder.itemView.setOnClickListener {
+            onClick?.invoke(batteries)
+        }
     }
 
     override fun getItemCount(): Int {

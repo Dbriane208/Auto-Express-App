@@ -62,7 +62,7 @@ class BatteryFragment : Fragment() {
                         Snackbar.make(requireView(), it.message.toString(), Snackbar.LENGTH_LONG).show()
                     }
                     is Resource.Loading -> {
-                        binding.batteryBook.visibility = View.VISIBLE
+                        binding.batteryBook.startAnimation()
                     }
                     is Resource.Success -> {
                         binding.batteryBook.visibility = View.GONE

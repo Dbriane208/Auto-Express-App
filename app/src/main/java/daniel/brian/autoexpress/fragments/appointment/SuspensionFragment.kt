@@ -62,7 +62,7 @@ class SuspensionFragment : Fragment() {
                         Snackbar.make(requireView(), it.message.toString(), Snackbar.LENGTH_LONG).show()
                     }
                     is Resource.Loading -> {
-                        binding.suspensionBook.visibility = View.VISIBLE
+                        binding.suspensionBook.startAnimation()
                     }
                     is Resource.Success -> {
                         binding.suspensionBook.visibility = View.GONE
