@@ -62,7 +62,7 @@ class OilFragment : Fragment() {
                         Snackbar.make(requireView(), it.message.toString(), Snackbar.LENGTH_LONG).show()
                     }
                     is Resource.Loading -> {
-                        binding.oilBook.visibility = View.VISIBLE
+                        binding.oilBook.startAnimation()
                     }
                     is Resource.Success -> {
                         binding.oilBook.visibility = View.GONE

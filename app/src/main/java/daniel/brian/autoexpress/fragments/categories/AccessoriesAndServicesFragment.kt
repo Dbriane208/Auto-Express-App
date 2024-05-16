@@ -53,12 +53,12 @@ class AccessoriesAndServicesFragment : Fragment(){
 
         accessoriesAdapter.onClick = {
             val b  = Bundle().apply {putParcelable("products",it)}
-            findNavController().navigate(R.id.action_accessoriesAndServicesFragment_to_productDetailsFragment2,b)
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
         }
 
         servicesAdapter.onClick = {
             val b  = Bundle().apply {putParcelable("products",it)}
-            findNavController().navigate(R.id.action_accessoriesAndServicesFragment_to_productDetailsFragment2,b)
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
         }
 
         lifecycleScope.launchWhenStarted {

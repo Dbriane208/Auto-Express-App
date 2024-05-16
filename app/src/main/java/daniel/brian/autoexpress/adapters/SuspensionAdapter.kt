@@ -57,6 +57,10 @@ class SuspensionAdapter: RecyclerView.Adapter<SuspensionAdapter.SuspensionViewHo
     override fun onBindViewHolder(holder: SuspensionViewHolder, position: Int) {
         val suspension = differ.currentList[position]
         holder.bind(suspension)
+
+        holder.itemView.setOnClickListener {
+            onClick?.invoke(suspension)
+        }
     }
 
     override fun getItemCount(): Int {

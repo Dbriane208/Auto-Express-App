@@ -58,6 +58,10 @@ class WiperBladesAdapter: RecyclerView.Adapter<WiperBladesAdapter.WiperBladesVie
     override fun onBindViewHolder(holder: WiperBladesViewHolder, position: Int) {
         val wipers = differ.currentList[position]
         holder.bind(wipers)
+
+        holder.itemView.setOnClickListener {
+            onClick?.invoke(wipers)
+        }
     }
 
     override fun getItemCount(): Int {

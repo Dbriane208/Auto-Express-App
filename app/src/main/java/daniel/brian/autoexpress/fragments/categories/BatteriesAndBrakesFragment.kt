@@ -53,12 +53,12 @@ class BatteriesAndBrakesFragment: Fragment() {
 
         batteriesAdapter.onClick = {
             val b = Bundle().apply { putParcelable("products",it) }
-            findNavController().navigate(R.id.action_batteriesAndBrakesFragment_to_productDetailsFragment2,b)
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
         }
 
         brakesAdapter.onClick = {
             val b = Bundle().apply { putParcelable("products",it) }
-            findNavController().navigate(R.id.action_batteriesAndBrakesFragment_to_productDetailsFragment2,b)
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
         }
 
         lifecycleScope.launchWhenStarted {

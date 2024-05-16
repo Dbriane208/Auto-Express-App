@@ -58,6 +58,10 @@ class BrakesAdapter: RecyclerView.Adapter<BrakesAdapter.BrakesViewHolder>() {
     override fun onBindViewHolder(holder: BrakesViewHolder, position: Int) {
         val brakes = differ.currentList[position]
         holder.bind(brakes)
+
+        holder.itemView.setOnClickListener {
+            onClick?.invoke(brakes)
+        }
     }
 
     override fun getItemCount(): Int {

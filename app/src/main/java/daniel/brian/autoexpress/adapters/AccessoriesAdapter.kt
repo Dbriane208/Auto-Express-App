@@ -57,6 +57,10 @@ class AccessoriesAdapter: RecyclerView.Adapter<AccessoriesAdapter.AccessoriesVie
     override fun onBindViewHolder(holder: AccessoriesViewHolder, position: Int) {
         val accessories = differ.currentList[position]
         holder.bind(accessories)
+
+        holder.itemView.setOnClickListener {
+            onClick?.invoke(accessories)
+        }
     }
 
     override fun getItemCount(): Int {

@@ -62,7 +62,7 @@ class BrakesFragment : Fragment() {
                         Snackbar.make(requireView(), it.message.toString(), Snackbar.LENGTH_LONG).show()
                     }
                     is Resource.Loading -> {
-                        binding.brakesBook.visibility = View.VISIBLE
+                        binding.brakesBook.startAnimation()
                     }
                     is Resource.Success -> {
                         binding.brakesBook.visibility = View.GONE

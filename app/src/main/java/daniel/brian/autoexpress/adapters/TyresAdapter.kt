@@ -58,6 +58,10 @@ class TyresAdapter: RecyclerView.Adapter<TyresAdapter.TyresViewHolder>() {
     override fun onBindViewHolder(holder: TyresViewHolder, position: Int) {
         val tyres = differ.currentList[position]
         holder.bind(tyres)
+
+        holder.itemView.setOnClickListener {
+            onClick?.invoke(tyres)
+        }
     }
 
     override fun getItemCount(): Int {

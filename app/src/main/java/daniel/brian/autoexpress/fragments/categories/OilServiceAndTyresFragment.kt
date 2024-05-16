@@ -52,12 +52,12 @@ class OilServiceAndTyresFragment: Fragment() {
 
         oilAdapter.onClick = {
             val b = Bundle().apply { putParcelable("products",it) }
-            findNavController().navigate(R.id.action_oilServiceAndTyresFragment_to_productDetailsFragment2,b)
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
         }
 
         tyresAdapter.onClick = {
             val b = Bundle().apply { putParcelable("products",it) }
-            findNavController().navigate(R.id.action_oilServiceAndTyresFragment_to_productDetailsFragment2,b)
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
         }
 
         lifecycleScope.launchWhenStarted {

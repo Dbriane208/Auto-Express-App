@@ -56,6 +56,10 @@ class PopularProductAdapter : RecyclerView.Adapter<PopularProductAdapter.Popular
     override fun onBindViewHolder(holder: PopularViewHolder, position: Int) {
         val popularProducts = differ.currentList[position]
         holder.bind(popularProducts)
+
+        holder.itemView.setOnClickListener {
+            onClick?.invoke(popularProducts)
+        }
     }
 
     override fun getItemCount(): Int {

@@ -24,6 +24,7 @@ android {
 
     }
 
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -90,8 +91,7 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
     
     // signing in with google
-    implementation(platform("com.google.firebase:firebase-bom:32.8.1"))
+    implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
     //noinspection UseTomlInstead
-    implementation("com.google.firebase:firebase-auth")
-    implementation("com.google.android.gms:play-services-auth:21.1.0")
+    implementation("com.google.android.gms:play-services-auth:21.1.1")
 }

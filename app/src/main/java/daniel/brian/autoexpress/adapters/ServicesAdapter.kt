@@ -57,6 +57,10 @@ class ServicesAdapter: RecyclerView.Adapter<ServicesAdapter.ServiceViewHolder>()
     override fun onBindViewHolder(holder: ServiceViewHolder, position: Int) {
         val services = differ.currentList[position]
         holder.bind(services)
+
+        holder.itemView.setOnClickListener {
+            onClick?.invoke(services)
+        }
     }
 
     override fun getItemCount(): Int {
