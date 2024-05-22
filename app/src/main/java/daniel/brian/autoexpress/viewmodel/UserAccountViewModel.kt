@@ -75,7 +75,7 @@ class UserAccountViewModel @Inject constructor(
     - The function validates the username and email and checks whether the user is authenticated
     - If the user is authenticated, the function will update the user's information in the firestore database
     */
-    fun updateInfo(user: User,imageUri: Uri?) {
+    fun updateUser(user: User,imageUri: Uri?) {
         val areInputsValid = validateEmail(user.email) is RegisterValidation.Success
                 && user.username.trim().isNotEmpty()
 

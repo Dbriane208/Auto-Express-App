@@ -3,24 +3,25 @@ package daniel.brian.autoexpress.fragments.settings
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
-import daniel.brian.autoexpress.R
 import daniel.brian.autoexpress.data.User
 import daniel.brian.autoexpress.databinding.FragmentUserAccountBinding
 import daniel.brian.autoexpress.utils.Resource
 import daniel.brian.autoexpress.viewmodel.UserAccountViewModel
 import kotlinx.coroutines.flow.collectLatest
 
+@Suppress("DEPRECATION")
 @AndroidEntryPoint
 class UserAccountFragment : Fragment() {
     private lateinit var binding: FragmentUserAccountBinding
@@ -64,6 +65,44 @@ class UserAccountFragment : Fragment() {
                     else -> Unit
                 }
             }
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.updateInfo.collectLatest {
+                when(it){
+                    is Resource.Error -> {
+                        binding.buttonSave.revertAnimation()
+                        Snackbar.make(requireView(),it.message.toString(), Snackbar.LENGTH_LONG).show()
+                    }
+                    is Resource.Loading -> {
+                        binding.buttonSave.startAnimation()
+                    }
+                    is Resource.Success -> {
+                        binding.buttonSave.revertAnimation()
+                        findNavController().navigateUp()
+                    }
+                    else -> Unit
+                }
+            }
+        }
+
+        binding.buttonSave.setOnClickListener {
+            binding.apply {
+                val username = edUsername.text.toString()
+                val email = edEmail.text.toString()
+                val user = User(username, email)
+                viewModel.updateUser(user,imageUri)
+            }
+        }
+
+        binding.imageEdit.setOnClickListener {
+            val intent = Intent(Intent.ACTION_GET_CONTENT)
+            intent.type = "image/*"
+            imageActivityResultLauncher.launch(intent)
+        }
+
+        binding.imageCloseUserAccount.setOnClickListener {
+            findNavController().navigateUp()
         }
     }
 
