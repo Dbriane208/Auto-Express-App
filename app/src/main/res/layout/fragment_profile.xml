@@ -89,107 +89,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:id="@+id/tvOrders"
-                style="@style/MediumTextViewThin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:text="@string/details"
-                android:textColor="@color/g_gray700"
-                android:textStyle="normal"
-                app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintTop_toBottomOf="@id/constraintProfile" />
-
-            <LinearLayout
-                android:id="@+id/linearOrders"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/search_box_background"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="@id/guideline2"
-                app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintTop_toBottomOf="@id/tvOrders">
-
-                <LinearLayout
-                    android:id="@+id/linearAllOrders"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center_vertical"
-                        android:background="@drawable/settings_items_background"
-                        android:contentDescription="@string/app_name"
-                        android:src="@drawable/ic_all_orders"
-                        app:tint="@color/g_white" />
-
-                    <TextView
-                        android:id="@+id/tvAllOrders"
-                        style="@style/MediumTextViewThin"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="15dp"
-                        android:layout_weight="1"
-                        android:text="@string/all_orders_"
-                        android:textColor="@color/g_gray700"
-                        android:textStyle="bold" />
-
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_gravity="center_vertical"
-                        android:contentDescription="@string/app_name"
-                        android:src="@drawable/ic_arrow"
-                        app:tint="@color/g_blue_gray200" />
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:id="@+id/linearAppointments"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center_vertical"
-                        android:background="@drawable/settings_items_background"
-                        android:backgroundTint="@color/g_gray700"
-                        android:contentDescription="@string/app_name"
-                        android:src="@drawable/ic_schedule"
-                        app:tint="@color/g_white" />
-
-                    <TextView
-                        android:id="@+id/tvAppointments"
-                        style="@style/MediumTextViewThin"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="15dp"
-                        android:layout_weight="1"
-                        android:text="@string/appointments"
-                        android:textColor="@color/g_gray700"
-                        android:textStyle="bold" />
-
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_gravity="center_vertical"
-                        android:contentDescription="@string/app_name"
-                        android:src="@drawable/ic_arrow"
-                        app:tint="@color/g_blue_gray200" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <TextView
                 android:id="@+id/tvRegional"
                 style="@style/MediumTextViewThin"
                 android:layout_width="wrap_content"
@@ -287,7 +186,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.53" />
+                app:layout_constraintGuide_percent="0.19" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

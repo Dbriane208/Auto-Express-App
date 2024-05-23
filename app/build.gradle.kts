@@ -95,4 +95,7 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
     //noinspection UseTomlInstead
     implementation("com.google.android.gms:play-services-auth:21.1.1")
+
+    // Mpesa Sdk
+    implementation("com.androidstudy.daraja:daraja:2.0.2")
 }

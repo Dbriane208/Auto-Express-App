@@ -6,10 +6,10 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -20,7 +20,6 @@ import com.shuhart.stepview.BuildConfig
 import dagger.hilt.android.AndroidEntryPoint
 import daniel.brian.autoexpress.R
 import daniel.brian.autoexpress.activities.MainActivity
-import daniel.brian.autoexpress.activities.ShoppingActivity
 import daniel.brian.autoexpress.databinding.FragmentProfileBinding
 import daniel.brian.autoexpress.utils.Resource
 import daniel.brian.autoexpress.viewmodel.ProfileViewModel
@@ -48,16 +47,6 @@ class ProfileFragment : Fragment() {
     // navigating to user account
     binding.constraintProfile.setOnClickListener {
         findNavController().navigate(R.id.action_profileFragment_to_userAccountFragment)
-    }
-
-    // navigating to orders
-    binding.linearAllOrders.setOnClickListener {
-        findNavController().navigate(R.id.action_profileFragment_to_allOrdersFragment)
-    }
-
-    //navigating to appointments
-    binding.linearAppointments.setOnClickListener {
-        findNavController().navigate(R.id.action_profileFragment_to_allAppointmentsFragment)
     }
 
     // updating the version code
