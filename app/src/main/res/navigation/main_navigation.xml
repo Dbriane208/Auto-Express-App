@@ -20,12 +20,6 @@
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
-            android:id="@+id/action_profileFragment_to_allOrdersFragment"
-            app:destination="@id/allOrdersFragment" />
-        <action
-            android:id="@+id/action_profileFragment_to_allAppointmentsFragment"
-            app:destination="@id/allAppointmentsFragment" />
-        <action
             android:id="@+id/action_profileFragment_to_userAccountFragment"
             app:destination="@id/userAccountFragment" />
     </fragment>
@@ -52,16 +46,6 @@
             android:name="products"
             app:argType="daniel.brian.autoexpress.data.Product" />
     </fragment>
-    <fragment
-        android:id="@+id/allOrdersFragment"
-        android:name="daniel.brian.autoexpress.fragments.settings.AllOrdersFragment"
-        android:label="fragment_all_orders"
-        tools:layout="@layout/fragment_all_orders" />
-    <fragment
-        android:id="@+id/allAppointmentsFragment"
-        android:name="daniel.brian.autoexpress.fragments.settings.AllAppointmentsFragment"
-        android:label="fragment_all_appointments"
-        tools:layout="@layout/fragment_all_appointments" />
     <fragment
         android:id="@+id/userAccountFragment"
         android:name="daniel.brian.autoexpress.fragments.settings.UserAccountFragment"

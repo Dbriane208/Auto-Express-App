@@ -1,6 +1,8 @@
 package daniel.brian.autoexpress.fragments.settings
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,9 +17,11 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
+import daniel.brian.autoexpress.R
 import daniel.brian.autoexpress.data.User
 import daniel.brian.autoexpress.databinding.FragmentUserAccountBinding
 import daniel.brian.autoexpress.utils.Resource
+import daniel.brian.autoexpress.viewmodel.ResetPasswordViewModel
 import daniel.brian.autoexpress.viewmodel.UserAccountViewModel
 import kotlinx.coroutines.flow.collectLatest
 
@@ -110,7 +114,8 @@ class UserAccountFragment : Fragment() {
         binding.apply {
             edUsername.setText(data.username)
             edEmail.setText(data.email)
-            Glide.with(this@UserAccountFragment).load(data.imagePath).into(imageUser)
+            Glide.with(this@UserAccountFragment).load(data.imagePath)
+                .error(R.drawable.ic_profile).into(imageUser)
         }
     }
 
@@ -121,7 +126,6 @@ class UserAccountFragment : Fragment() {
             imageEdit.visibility = View.VISIBLE
             edUsername.visibility = View.VISIBLE
             edEmail.visibility = View.VISIBLE
-            tvUpdatePassword.visibility = View.VISIBLE
             buttonSave.visibility = View.VISIBLE
         }
     }
