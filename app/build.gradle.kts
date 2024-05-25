@@ -1,4 +1,3 @@
-
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -24,7 +23,6 @@ android {
 
     }
 
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -34,6 +32,13 @@ android {
             )
         }
     }
+
+    buildTypes.forEach {
+        it.buildConfigField("String", "CONSUMER_KEY","\"QL7S1jYVxSZNZ8TrUAlImRVqiH3IEvV5p2Wd43P1EKke0ZkL\"" )
+        it.buildConfigField("String", "CONSUMER_SECRET", "\"iG66xMbrtE4rVpf2gO8OSbnq03nLjOkyGoj08zs4WPUGEwoxnxmq5pNEfgk45GcU\"")
+    }
+
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -43,6 +48,7 @@ android {
     }
     buildFeatures{
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -94,8 +100,21 @@ dependencies {
     // signing in with google
     implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
     //noinspection UseTomlInstead
-    implementation("com.google.android.gms:play-services-auth:21.1.1")
+    implementation("com.google.android.gms:play-services-auth:21.2.0")
 
-    // Mpesa Sdk
-    implementation("com.androidstudy.daraja:daraja:2.0.2")
+    //Mpesa Stk push dependancies
+    implementation ("com.jakewharton:butterknife:10.1.0")
+    annotationProcessor("com.jakewharton:butterknife-compiler:10.1.0")
+    implementation ("com.jakewharton.timber:timber:5.0.1")
+
+    implementation("cn.pedant.sweetalert:library:1.3")
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+
+    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.squareup.okio:okio:3.6.0")
 }

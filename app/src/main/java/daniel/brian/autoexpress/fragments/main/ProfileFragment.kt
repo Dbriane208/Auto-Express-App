@@ -49,6 +49,8 @@ class ProfileFragment : Fragment() {
         findNavController().navigate(R.id.action_profileFragment_to_userAccountFragment)
     }
 
+
+
     // updating the version code
     "Version ${BuildConfig.VERSION_CODE}".also { binding.tvVersion.text = it }
 
