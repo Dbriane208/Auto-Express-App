@@ -3,6 +3,7 @@
 package daniel.brian.autoexpress.fragments.main
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +19,7 @@ import daniel.brian.autoexpress.R
 import daniel.brian.autoexpress.adapters.CartAdapter
 import daniel.brian.autoexpress.databinding.FragmentCartBinding
 import daniel.brian.autoexpress.firebase.FirebaseCommon
+import daniel.brian.autoexpress.payments.MpesaPaymentActivity
 import daniel.brian.autoexpress.utils.Resource
 import daniel.brian.autoexpress.utils.VerticalItemDecoration
 import daniel.brian.autoexpress.viewmodel.CartViewModel
@@ -73,6 +75,11 @@ class CartFragment : Fragment() {
 
         binding.imageCloseCart.setOnClickListener {
             findNavController().navigateUp()
+        }
+
+        binding.buttonCheckout.setOnClickListener {
+            val intent = Intent(context,MpesaPaymentActivity::class.java)
+            startActivity(intent)
         }
 
         lifecycleScope.launchWhenStarted {

@@ -91,6 +91,10 @@
     <string name="_email">email</string>
     <string name="forgot_change_password">Forgot/change password</string>
     <string name="_save">Save</string>
+    <string name="payment">Check Out</string>
+    <string name="code">Business code ie Till No.</string>
+    <string name="amount">Amount</string>
+    <string name="pay">Pay with Mpesa</string>
 
     <string-array name="tyreServices">
         <item>Tyre Fitment - Passenger</item>
