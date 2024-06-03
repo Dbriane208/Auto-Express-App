@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:fillViewport="true"
+    android:orientation="vertical"
     tools:context=".fragments.categories.ProductDetailsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -62,12 +62,12 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/productPrice"
+                android:id="@+id/itemPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/h3"
                 android:textColor="@color/g_gray700"
-                android:text="@string/_600"/>
+                android:text="@string/ksh_500"/>
 
         </LinearLayout>
 
@@ -80,6 +80,7 @@
             android:textColor="@color/g_gray700"
             android:textSize="12sp"
             android:textStyle="bold"
+            android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="@id/linearTextPrice"
             app:layout_constraintTop_toBottomOf="@id/linearTextPrice" />
 
@@ -104,7 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.63" />
+            app:layout_constraintGuide_percent="0.74" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+</LinearLayout>

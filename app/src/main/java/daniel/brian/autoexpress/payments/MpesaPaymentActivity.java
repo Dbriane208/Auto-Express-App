@@ -5,6 +5,7 @@ import static daniel.brian.autoexpress.payments.utils.Constants.PASSKEY;
 import static daniel.brian.autoexpress.payments.utils.Constants.TRANSACTION_TYPE;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,6 +41,9 @@ public class MpesaPaymentActivity extends AppCompatActivity {
         binding = ActivityMpesaPaymentBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        Intent intent = getIntent();
+        int totalPrice = intent.getIntExtra("totalPrice",0);
+
         progressDialog = new ProgressDialog(this);
         mApiClient = new DarajaApiClient();
         mApiClient.setIsDebug(true);
@@ -49,9 +53,8 @@ public class MpesaPaymentActivity extends AppCompatActivity {
         binding.btnPay.setOnClickListener(v -> {
             // accessing the buttons
             String till = Objects.requireNonNull(binding.businessCode.getText()).toString().trim();
-            String amount = Objects.requireNonNull(binding.amount.getText()).toString().trim();
             String phoneNumber = Objects.requireNonNull(binding.phoneNumber.getText()).toString().trim();
-            performSTKPush(till,amount,phoneNumber);
+            performSTKPush(till, String.valueOf(totalPrice),phoneNumber);
         });
     }
 

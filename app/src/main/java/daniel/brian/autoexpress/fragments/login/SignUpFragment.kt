@@ -24,7 +24,10 @@ import daniel.brian.autoexpress.utils.Resource
 import daniel.brian.autoexpress.viewmodel.IntroductionViewModel
 import daniel.brian.autoexpress.viewmodel.SignUpViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import timber.log.Timber
 
 @Suppress("DEPRECATION")
 @AndroidEntryPoint
@@ -58,7 +61,7 @@ class SignUpFragment : Fragment() {
             viewModel.regWithGoogle.collect{
                 when(it){
                     is Resource.Error -> {
-                        Log.e("Sign up Fragment",it.message.toString())
+                        Snackbar.make(requireView(), "Check Internet Connection", Snackbar.LENGTH_LONG).show()
                     }
                     is Resource.Loading -> {
                         Snackbar.make(requireView(), "Loading...", Snackbar.LENGTH_LONG).show()
@@ -93,7 +96,8 @@ class SignUpFragment : Fragment() {
             viewModel.register.collect{
                 when(it){
                     is Resource.Error -> {
-                        Log.e("Sign up Fragment",it.message.toString())
+                        Snackbar.make(requireView(), "Similar email exists.Try another email!", Snackbar.LENGTH_LONG).show()
+                        binding.btnRegister.revertAnimation()
                     }
                     is Resource.Loading ->{
                         binding.btnRegister.startAnimation()

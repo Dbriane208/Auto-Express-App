@@ -53,7 +53,7 @@ class CartFragment : Fragment() {
             viewModel.productsPrice.collectLatest { price ->
                 price?.let {
                     totalPrice = it
-                    "$ $price".also { binding.tvTotalPrice.text = it }
+                    "Ksh $price".also { binding.tvTotalPrice.text = it }
                 }
             }
         }
@@ -79,6 +79,7 @@ class CartFragment : Fragment() {
 
         binding.buttonCheckout.setOnClickListener {
             val intent = Intent(context,MpesaPaymentActivity::class.java)
+            intent.putExtra("totalPrice",totalPrice.toInt())
             startActivity(intent)
         }
 

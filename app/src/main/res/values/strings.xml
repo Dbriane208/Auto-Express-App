@@ -72,7 +72,7 @@
     <string name="check_out">Check out</string>
     <string name="empty">Your Cart is empty</string>
     <string name="total">Total</string>
-    <string name="_150">$150</string>
+    <string name="_150">Ksh 150</string>
     <string name="_chair">Battery</string>
     <string name="_50">Ksh 500</string>
     <string name="_1">1</string>
@@ -93,8 +93,10 @@
     <string name="_save">Save</string>
     <string name="payment">Check Out</string>
     <string name="code">Business code ie Till No.</string>
-    <string name="amount">Amount</string>
+    <string name="amount">Ksh 500</string>
     <string name="pay">Pay with Mpesa</string>
+    <string name="ksh_500">Ksh 500</string>
+    <string name="amountT">Total Amount :</string>
 
     <string-array name="tyreServices">
         <item>Tyre Fitment - Passenger</item>

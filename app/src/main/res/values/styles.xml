@@ -25,7 +25,7 @@
     </style>
 
     <style name="h3">
-        <item name="android:fontFamily">@font/antipasto_pro_light_trial</item>
+        <item name="android:fontFamily">@font/poppins_thin</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/h3TextSize</item>
     </style>
