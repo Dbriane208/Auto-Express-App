@@ -16,12 +16,15 @@ import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import daniel.brian.autoexpress.R
 import daniel.brian.autoexpress.activities.ShoppingActivity
+import daniel.brian.autoexpress.activities.SplashActivity
 import daniel.brian.autoexpress.data.User
 import daniel.brian.autoexpress.databinding.FragmentSignUpBinding
 import daniel.brian.autoexpress.utils.Constants.RC_SIGN_IN
 import daniel.brian.autoexpress.utils.RegisterValidation
 import daniel.brian.autoexpress.utils.Resource
 import daniel.brian.autoexpress.viewmodel.IntroductionViewModel
+import daniel.brian.autoexpress.viewmodel.IntroductionViewModel.Companion.SHOPPING_ACTIVITY
+import daniel.brian.autoexpress.viewmodel.IntroductionViewModel.Companion.SPLASH_ACTIVITY
 import daniel.brian.autoexpress.viewmodel.SignUpViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
@@ -34,6 +37,7 @@ import timber.log.Timber
 class SignUpFragment : Fragment() {
     private lateinit var binding: FragmentSignUpBinding
     private val viewModel by viewModels<SignUpViewModel>()
+    private val introViewModel by viewModels<IntroductionViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,8 +57,25 @@ class SignUpFragment : Fragment() {
         }
 
         binding.btnSignIn.setOnClickListener {
-            // introViewModel.startButtonClick()
             viewModel.signIn(this)
+        }
+
+        lifecycleScope.launchWhenStarted {
+            introViewModel.navigate.collectLatest {
+                when(it){
+                    SHOPPING_ACTIVITY ->{
+                        Intent(requireActivity(),ShoppingActivity::class.java).also {intent ->
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                            startActivity(intent)
+                        }
+                    }
+                    SPLASH_ACTIVITY -> {
+                        val intent = Intent(context,SplashActivity::class.java)
+                        startActivity(intent)
+                    }
+                    else -> Unit
+                }
+            }
         }
 
         lifecycleScope.launchWhenStarted {
@@ -81,7 +102,7 @@ class SignUpFragment : Fragment() {
 
         binding.apply {
             btnRegister.setOnClickListener {
-                //introViewModel.startButtonClick()
+                introViewModel.startButtonClick()
                 val user = User(
                     username.text.toString().trim(),
                     email.text.toString().trim()

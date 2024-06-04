@@ -97,6 +97,12 @@
     <string name="pay">Pay with Mpesa</string>
     <string name="ksh_500">Ksh 500</string>
     <string name="amountT">Total Amount :</string>
+    <string name="billing">Billing</string>
+    <string name="payment_methods">Payment Methods</string>
+    <string name="payText">Auto Express allows only Mpesa transactions for goods and services purchased.\n</string>
+    <string name="_total">Total</string>
+    <string name="place_order">Pay with Mpesa</string>
+    <string name="chair_">Brakes</string>
 
     <string-array name="tyreServices">
         <item>Tyre Fitment - Passenger</item>
