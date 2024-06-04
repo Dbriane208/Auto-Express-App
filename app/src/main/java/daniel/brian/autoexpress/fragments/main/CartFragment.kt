@@ -112,6 +112,7 @@ class CartFragment : Fragment() {
                 }
             }
         }
+
         // collecting the dialog state
         lifecycleScope.launchWhenStarted {
             viewModel.deleteDialog.collectLatest {

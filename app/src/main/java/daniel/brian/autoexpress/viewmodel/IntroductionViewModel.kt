@@ -20,7 +20,7 @@ class IntroductionViewModel @Inject constructor(
 
     companion object{
         const val SHOPPING_ACTIVITY = 1
-        val SPLASH_ACTIVITY = 2
+        const val SPLASH_ACTIVITY = 2
     }
 
     // init blocks executed when instance of claas is created
