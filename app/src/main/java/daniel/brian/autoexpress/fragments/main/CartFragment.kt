@@ -77,10 +77,20 @@ class CartFragment : Fragment() {
             findNavController().navigateUp()
         }
 
+//        binding.buttonCheckout.setOnClickListener {
+//            val intent = Intent(context,MpesaPaymentActivity::class.java)
+//            intent.putExtra("totalPrice",totalPrice.toInt())
+//            startActivity(intent)
+//        }
+
         binding.buttonCheckout.setOnClickListener {
-            val intent = Intent(context,MpesaPaymentActivity::class.java)
-            intent.putExtra("totalPrice",totalPrice.toInt())
-            startActivity(intent)
+            val action =
+                CartFragmentDirections.actionCartFragmentToBillingFragment(
+                   true,
+                    cartAdapter.differ.currentList.toTypedArray(),
+                    totalPrice
+                )
+            findNavController().navigate(action)
         }
 
         lifecycleScope.launchWhenStarted {
