@@ -1,6 +1,8 @@
 package daniel.brian.autoexpress.payments;
 
+import static daniel.brian.autoexpress.payments.utils.Constants.BUSINESS_SHORT_CODE;
 import static daniel.brian.autoexpress.payments.utils.Constants.CALLBACKURL;
+import static daniel.brian.autoexpress.payments.utils.Constants.PARTYB;
 import static daniel.brian.autoexpress.payments.utils.Constants.PASSKEY;
 import static daniel.brian.autoexpress.payments.utils.Constants.TRANSACTION_TYPE;
 
@@ -13,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Objects;
 
+import daniel.brian.autoexpress.activities.MainActivity;
 import daniel.brian.autoexpress.databinding.ActivityMpesaPaymentBinding;
 import daniel.brian.autoexpress.payments.model.AccessToken;
 import daniel.brian.autoexpress.payments.model.STKPush;
@@ -35,7 +38,8 @@ public class MpesaPaymentActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         Intent intent = getIntent();
-        int totalPrice = intent.getIntExtra("totalPrice",0);
+        int totalPrice = intent.getIntExtra("price",0);
+        String phoneNumber = intent.getStringExtra("phone");
 
         progressDialog = new ProgressDialog(this);
         mApiClient = new DarajaApiClient();
@@ -44,27 +48,24 @@ public class MpesaPaymentActivity extends AppCompatActivity {
         getAccessToken();
 
         binding.btnPay.setOnClickListener(v -> {
-            // accessing the buttons
-            String till = Objects.requireNonNull(binding.businessCode.getText()).toString().trim();
-            String phoneNumber = Objects.requireNonNull(binding.phoneNumber.getText()).toString().trim();
-            performSTKPush(till, String.valueOf(totalPrice),phoneNumber);
+            performSTKPush(String.valueOf(totalPrice),phoneNumber);
         });
     }
 
-    private void performSTKPush(String till, String amount, String phoneNumber) {
+    private void performSTKPush(String amount, String phoneNumber) {
         progressDialog.setMessage("Processing your request");
         progressDialog.setTitle("Please Wait..");
         progressDialog.setIndeterminate(true);
         progressDialog.show();
         String timestamp = Utils.getTimestamp();
         STKPush stkPush = new STKPush(
-                till,
-                Utils.getPassword(till,PASSKEY, timestamp),
+                BUSINESS_SHORT_CODE,
+                Utils.getPassword(BUSINESS_SHORT_CODE,PASSKEY, timestamp),
                 timestamp,
                 TRANSACTION_TYPE,
                 amount,
                 Utils.validatePhoneNumber(phoneNumber),
-                till,
+                PARTYB,
                 Utils.validatePhoneNumber(phoneNumber),
                 CALLBACKURL,
                 "AutoExpress",
@@ -117,5 +118,12 @@ public class MpesaPaymentActivity extends AppCompatActivity {
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent1 = new Intent(this, MainActivity.class);
+        startActivity(intent1);
     }
 }
