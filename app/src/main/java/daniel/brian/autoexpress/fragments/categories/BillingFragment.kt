@@ -69,6 +69,7 @@ class BillingFragment : Fragment() {
             findNavController().navigateUp()
         }
 
+
         lifecycleScope.launch {
             viewModel.order.collectLatest {
                 when(it){
@@ -81,7 +82,6 @@ class BillingFragment : Fragment() {
                     }
                     is Resource.Success -> {
                         binding.buttonPlaceOrder.revertAnimation()
-                        findNavController().navigateUp()
                         Snackbar.make(requireView(), "Products successfully purchased!", Snackbar.LENGTH_SHORT).show()
                     }
                     else -> Unit
@@ -93,31 +93,20 @@ class BillingFragment : Fragment() {
         "Ksh $totalPrice".also { binding.tvTotalPrice.text = it }
 
         binding.buttonPlaceOrder.setOnClickListener {
-            showPurchaseDialog()
+            val phoneNumber = binding.phoneNumber.text.toString()
+            if(phoneNumber.isNotEmpty()){
+                val intent = Intent(context,MpesaPaymentActivity::class.java)
+                intent.putExtra("phone",phoneNumber)
+                intent.putExtra("price",totalPrice.toInt())
+                startActivity(intent)
+                viewModel.clearCart()
+            }else{
+                Snackbar.make(requireView(), "Phone Number cannot be empty!", Snackbar.LENGTH_SHORT).show()
+            }
         }
 
         // setting up the adapter
         setupBillingProductsRV()
-    }
-
-    private fun showPurchaseDialog() {
-        val alertDialog =
-            AlertDialog.Builder(requireContext()).apply {
-                setTitle("Cart Items")
-                setMessage("Do you want to Purchase your cart items?")
-                setNegativeButton("cancel"){dialog, _ ->
-                    dialog.dismiss()
-                }
-                setPositiveButton("Yes"){dialog,_->
-                    val order = Order(totalPrice,products)
-                    viewModel.placeOrder(order)
-                     val intent = Intent(context,MpesaPaymentActivity::class.java)
-                    startActivity(intent)
-                    dialog.dismiss()
-                }
-            }
-        alertDialog.create()
-        alertDialog.show()
     }
 
     private fun setupBillingProductsRV() {

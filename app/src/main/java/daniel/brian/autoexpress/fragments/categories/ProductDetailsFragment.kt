@@ -72,7 +72,7 @@ class ProductDetailsFragment : Fragment() {
                     is Resource.Success -> {
                         binding.btnAddToCart.revertAnimation()
                         binding.btnAddToCart.setBackgroundColor(resources.getColor(R.color.g_black))
-                        Snackbar.make(requireView(), "Product Added Successfully to Cart!!", Snackbar.LENGTH_LONG).show()
+                        Snackbar.make(requireView(), "Product Added Successfully to Cart!!", Snackbar.LENGTH_SHORT).show()
                     }
                     else -> Unit
                 }

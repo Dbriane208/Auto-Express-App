@@ -164,14 +164,27 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <TextView
+            android:id="@+id/paymentConfirmation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/phoneConfirm"
+            android:fontFamily="@font/poppins_light"
+            app:layout_constraintTop_toBottomOf="@id/totalBoxContainer"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintBottom_toTopOf="@id/phoneContainer"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/phoneContainer"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="@id/totalBoxContainer"
-            app:layout_constraintEnd_toEndOf="@id/totalBoxContainer"
-            app:layout_constraintTop_toBottomOf="@id/totalBoxContainer"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintTop_toBottomOf="@id/paymentConfirmation"
             app:layout_constraintBottom_toTopOf="@id/buttonPlaceOrder">
 
             <TextView

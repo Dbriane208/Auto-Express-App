@@ -20,7 +20,7 @@ class OrderViewModel @Inject constructor(
     private val _order = MutableStateFlow<Resource<Order>>(Resource.Unspecified())
     val order = _order.asStateFlow()
 
-    fun placeOrder(order: Order){
+    fun clearCart(){
         // we're creating an order collection to store order of a specific user
         viewModelScope.launch {
             _order.emit(Resource.Loading())
@@ -29,21 +29,10 @@ class OrderViewModel @Inject constructor(
         // batch - read only
         // transaction - read and write
         firestore.runBatch {
-            // Add the order into the user-order collection
-            firestore.collection("user").document(auth.uid!!).collection("orders")
-                .document().set(order)
-            // Add the order into orders collection
-            firestore.collection("orders").document().set(order)
-            // Delete the products from user-cart collection. we're not allowed to delete a whole collection
-            // so we will use a loop to delete the document
             firestore.collection("user").document(auth.uid!!).collection("cart").get()
                 .addOnSuccessListener {snapshot ->
                     snapshot.documents.forEach {
                         it.reference.delete()
-                    }
-                }.addOnSuccessListener {
-                    viewModelScope.launch {
-                        _order.emit(Resource.Success(order))
                     }
                 }.addOnFailureListener {
                     viewModelScope.launch {

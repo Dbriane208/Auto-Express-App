@@ -101,8 +101,10 @@
     <string name="payment_methods">Payment Methods</string>
     <string name="payText">Auto Express allows only Mpesa transactions for goods and services purchased.\n</string>
     <string name="_total">Total</string>
-    <string name="place_order">Pay with Mpesa</string>
+    <string name="place_order">Verify Purchase</string>
     <string name="chair_">Brakes</string>
+    <string name="phoneConfirm">Enter your phone number to authenticate the payment of your product(s).</string>
+    <string name="confirmPayment">Proceed to pay for your products by clicking the Confirm and pay Button.\n</string>
 
     <string-array name="tyreServices">
         <item>Tyre Fitment - Passenger</item>

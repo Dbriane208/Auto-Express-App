@@ -103,8 +103,8 @@ dependencies {
     implementation("com.google.android.gms:play-services-auth:21.2.0")
 
     //Mpesa Stk push dependancies
-    implementation ("com.jakewharton:butterknife:10.1.0")
-    annotationProcessor("com.jakewharton:butterknife-compiler:10.1.0")
+//    implementation ("com.jakewharton:butterknife:10.1.0")
+//    annotationProcessor("com.jakewharton:butterknife-compiler:10.1.0")
     implementation ("com.jakewharton.timber:timber:5.0.1")
 
     implementation("cn.pedant.sweetalert:library:1.3")
