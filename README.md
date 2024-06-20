@@ -1,2 +1,2 @@
 # Auto-Express-App
-This is android app is to be submitted for my fulfillment of my bachelors degree fourth year project.
+An Android app built with kotlin that tries to simulate the functionalites of Auto Express car maintenace website. The app allows user to book appointments, buy and pay for car spare parts.
